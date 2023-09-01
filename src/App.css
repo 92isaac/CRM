@@ -3,3 +3,8 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+.active{
+border-left: 5px solid #FCB900;
+color: #FCB900;
+}
