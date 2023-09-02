@@ -7,6 +7,8 @@ import { MdPayment } from 'react-icons/md'
 import { AiOutlineMessage } from 'react-icons/ai'
 import { TbReport } from 'react-icons/tb'
 import { GlobalUseContext } from '../hook/Context'
+import { IoMdArrowDropdown } from "react-icons/io";
+
 
 
 const MobileNav:React.FC = () => {
@@ -35,9 +37,12 @@ const MobileNav:React.FC = () => {
         <li className='text-lg mb-8'>
             <NavLink to='/workspace/message' className='pl-3 text-sm' onClick={handleChange}> <AiOutlineMessage  className="text-lg mr-4 inline-block" /> Message</NavLink>
         </li>
-        <li className='text-lg mb-8'>
-            <NavLink to='/workspace/report' className='pl-3 text-sm' onClick={handleChange}> <TbReport  className="text-lg mr-4 inline-block" /> Report</NavLink>
-        </li>
+        <li className="text-lg mb-8">
+            <div className="pl-3 text-sm">
+              <TbReport className="text-2xl mr-4 inline-block" /> Report{" "}
+                <IoMdArrowDropdown className="inline-block ml-28" />
+            </div>
+          </li>
         
     </ul>
 </nav>
