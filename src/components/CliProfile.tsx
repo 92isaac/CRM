@@ -60,7 +60,7 @@ export const CliProfile: React.FC = () => {
           </p>
           <h3 className="font-bold text-sm">Female</h3>
         </div>
-        <div className="my-3 flex lg:gap-40 items-center">
+        <div className="my-3 flex gap-10 lg:gap-40 items-center">
           <div>
             <p className="text-gray-400 font-semibold text-xs md:text-sm pb-2 ">
               Place of Birth

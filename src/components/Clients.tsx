@@ -23,7 +23,7 @@ export const Clients: React.FC = () => {
             className="border rounded-md px-4 py-2 w-full"
             placeholder=" &#128269; Search by name, email"
           />
-          <Button title="Add new Client" className=" bg-[#FCB900] text-white text-xs font-medium px-4 py-3 mt-3 md:mt-0 rounded-md md:w-1/3" OnClick/>
+          <Button title="Add new Client" className=" bg-[#FCB900] text-white text-xs font-medium px-4 py-3 mt-3 md:mt-0 rounded-md md:w-1/3" OnClick={()=>{}}/>
         </form>
         <div className="w-full overflow-x-auto border border-b-md md:mb-20 mt-3 md:mt-10 rounded-t-md">
         <table className="w-full whitespace-no-wrap border-collapse border border-b-md">
