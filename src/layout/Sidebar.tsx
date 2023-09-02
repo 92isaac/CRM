@@ -19,22 +19,22 @@ const Sidebar:React.FC = () => {
                     <NavLink to='/workspace' className='pl-3'> <CiGrid31  className="text-2xl mr-4 inline-block" /> Workspace</NavLink>
                 </li>
                 <li className='text-lg mb-8'>
-                    <NavLink to='/clients' className='pl-3'> <FaUsers  className="text-2xl mr-4 inline-block" /> Client</NavLink>
+                    <NavLink to='/workspace/clients' className='pl-3'> <FaUsers  className="text-2xl mr-4 inline-block" /> Client</NavLink>
                 </li>
                 <li className='text-lg mb-8'>
-                    <NavLink to='/schedule-appointment' className='pl-3'> <GrScheduleNew  className="text-2xl mr-4 inline-block" /> Schedule Appointment</NavLink>
+                    <NavLink to='/workspace/schedule-appointment' className='pl-3'> <GrScheduleNew  className="text-2xl mr-4 inline-block" /> Schedule Appointment</NavLink>
                 </li>
                 <li className='text-lg mb-8'>
-                    <NavLink to='/payment' className='pl-3'> <MdPayment  className="text-2xl mr-4 inline-block" /> Payment</NavLink>
+                    <NavLink to='/workspace/payment' className='pl-3'> <MdPayment  className="text-2xl mr-4 inline-block" /> Payment</NavLink>
                 </li>
                 <li className='text-lg mb-8'>
-                    <NavLink to='/task' className='pl-3'> <FaTasks  className="text-2xl mr-4 inline-block" /> Task</NavLink>
+                    <NavLink to='/workspace/task' className='pl-3'> <FaTasks  className="text-2xl mr-4 inline-block" /> Task</NavLink>
                 </li>
                 <li className='text-lg mb-8'>
-                    <NavLink to='/message' className='pl-3'> <AiOutlineMessage  className="text-2xl mr-4 inline-block" /> Message</NavLink>
+                    <NavLink to='/workspace/message' className='pl-3'> <AiOutlineMessage  className="text-2xl mr-4 inline-block" /> Message</NavLink>
                 </li>
                 <li className='text-lg mb-8'>
-                    <NavLink to='/report' className='pl-3'> <TbReport  className="text-2xl mr-4 inline-block" /> Report</NavLink>
+                    <NavLink to='/workspace/report' className='pl-3'> <TbReport  className="text-2xl mr-4 inline-block" /> Report</NavLink>
                 </li>
                 
             </ul>

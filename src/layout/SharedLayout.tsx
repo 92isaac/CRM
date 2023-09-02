@@ -8,7 +8,7 @@ const SharedDashboardLayout = () => {
   return (
     <div className="mx-5 md:mx-0 max-h-screen">
       <div className="md:flex gap- justify-between w-full">
-        <div className=" md:mx-0 md:w-1/5 md:h-screen shadow my-1 w-full md:fixed">
+        <div className="hidden md:block md:mx-0 md:w-1/5 md:h-screen shadow my-1 w-full md:fixed">
           {/* <Sidebar /> */}
           <Sidebar />
         </div>
