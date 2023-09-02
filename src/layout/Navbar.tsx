@@ -12,7 +12,7 @@ export const DashboardNavbar: React.FC = () => {
 
   return (
     <div className="relative">
-      <TfiMenu className="md:hidden absolute top-4 text-lg" onClick={()=>{handleChange()}}/>
+      <TfiMenu className="md:hidden absolute top-4 text-2xl" onClick={()=>{handleChange()}}/>
       {toggle && <MobileNav />}
       <div className="flex justify-end items-center pr-10">
         <div className="flex justify-between items-center gap-3">
