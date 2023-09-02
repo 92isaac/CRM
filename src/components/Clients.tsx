@@ -21,7 +21,7 @@ export const Clients: React.FC = () => {
             type="text"
             title="search"
             className="border rounded-md px-4 py-2 w-full"
-            placeholder=" &#128269; Search by name, email"
+            placeholder=" &#128269; Search by name, email..."
           />
           <Button title="Add new Client" className=" bg-[#FCB900] text-white text-xs font-medium px-4 py-3 mt-3 md:mt-0 rounded-md md:w-1/3" OnClick={()=>{}}/>
         </form>

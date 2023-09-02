@@ -3,7 +3,15 @@ import { userPlaceholder } from "../helpers/images";
 import { Button } from "../helpers/Button";
 import { useNavigate } from "react-router-dom";
 
-export const CliProfile: React.FC = () => {
+interface ClientsData{
+  id:string;
+  name:string;
+  email: string;
+  phone: string;
+  address:string;
+}
+
+export const CliProfile: React.FC<ClientsData> = ({name, email, phone, address}) => {
   const navigate = useNavigate();
   return (
     <div className="lg:px-16 lg:py-8 bg-[]">
@@ -23,9 +31,9 @@ export const CliProfile: React.FC = () => {
             />
           </div>
           <div className="">
-            <h1 className="font-semibold mb-2">Odusote Mayorkun</h1>
+            <h1 className="font-semibold mb-2">{name}</h1>
             <p className="text-gray-400 font-semibold text-xs mb-2">
-              adegoketemitope1909@gmail.com
+              {email}
             </p>
             <p className="font-semibold text-gray-400 text-sm mb-2">
               <span>Female </span> <span>54 years Old</span>{" "}
@@ -39,13 +47,13 @@ export const CliProfile: React.FC = () => {
           <p className="text-gray-400 font-semibold text-xs md:text-sm pb-2 ">
             Name
           </p>
-          <h3 className="font-bold text-sm">Odusote Mayorkun</h3>
+          <h3 className="font-bold text-sm">{name}</h3>
         </div>
         <div className="my-3">
           <p className="text-gray-400 font-semibold text-xs md:text-sm pb-2 ">
             Email
           </p>
-          <h3 className="font-bold text-sm">adegoketemitope1909@gmail.com</h3>
+          <h3 className="font-bold text-sm">{email}</h3>
         </div>
         <div className="my-3">
           <p className="text-gray-400 font-semibold text-xs md:text-sm pb-2 ">
@@ -105,14 +113,14 @@ export const CliProfile: React.FC = () => {
           <p className="text-gray-400 font-semibold text-xs md:text-sm pb-2 ">
             Phone Number
           </p>
-          <h3 className="font-bold text-sm">+234(0)8160730668</h3>
+          <h3 className="font-bold text-sm">{phone}</h3>
         </div>
         <div className="my-3">
           <p className="text-gray-400 font-semibold text-xs md:text-sm pb-2 ">
             Residential Address
           </p>
           <h3 className="font-bold text-sm">
-            No 2, olonade close, monota, Ibadan Oyo state Nigeria
+            {address}
           </h3>
         </div>
         <div className="my-3">
