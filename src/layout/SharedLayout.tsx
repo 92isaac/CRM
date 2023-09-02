@@ -19,7 +19,6 @@ const SharedDashboardLayout = () => {
          <main className="w-  md:mb-10 md:h-[83vh] mx-5 overflow-y-scroll mt-5">
             <Outlet />
           </main>
-      
         </div>
       </div>
     </div>

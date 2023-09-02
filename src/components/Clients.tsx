@@ -1,14 +1,17 @@
 import React from "react";
 import { clientData } from "../helpers/data";
+import { useNavigate } from "react-router-dom";
+
 
 export const Clients: React.FC = () => {
+    const navigate = useNavigate()
   return (
     <div className="lg:px-16 lg:py-8">
       <div>
-        <h1 className="font-bold">Clients</h1>
+        <h1 className="font-bold text-lg">Clients</h1>
         <p>Here is the list</p>
       </div>
-      <div className="rounded-md shadow md:px-8 py-4">
+      <div className="rounded-md shadow md:mt-4 md:px-8 py-4 bg-white">
         <form
           action=""
           className="w-full md:flex justify-between items-center gap-10"
@@ -35,7 +38,7 @@ export const Clients: React.FC = () => {
             </thead>
             <tbody>
              {clientData.map((client)=>(
-                   <tr className="hover:border-l-[#FCB900] hover:bg-[#f6edd3] hover:border-l-2" key={client.id}>
+                   <tr className="hover:border-l-[#FCB900] hover:bg-[#f6edd3] hover:border-l-2" key={client.id} onClick={()=>{navigate('/workspace/clients/profile/' + client.id )}}>
                    <td className="px-3 text-sm py-3">{client.name}</td>
                    <td className="px-3 text-sm py-3">{client.email}</td>
                    <td className="px-3 text-sm py-3">{client.phone}</td>
