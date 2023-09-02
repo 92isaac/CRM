@@ -5,6 +5,7 @@ import LandingPage from "./routes/LandingPage";
 import SharedDashboardLayout from "./layout/SharedLayout";
 import PageNotFound from "./routes/PageNotFound";
 import { Loading } from "./helpers/Loading";
+import ScrollToTop from "./helpers/ScrollToTop";
 
 const WorkSpace = lazy(() => import("./routes/WorkSpace"));
 const Client = lazy(() => import("./routes/Client"));
@@ -14,6 +15,7 @@ const ClientProfile = lazy(() => import("./routes/ClientProfile"));
 function App() {
   return (
     <Suspense fallback={<Loading />}>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/workspace" element={<SharedDashboardLayout />}>
