@@ -7,7 +7,7 @@ export const Clients: React.FC = () => {
     const navigate = useNavigate()
   return (
     <div className="lg:px-16 lg:py-8">
-      <div>
+      <div className="">
         <h1 className="font-bold text-lg">Clients</h1>
         <p>Here is the list</p>
       </div>

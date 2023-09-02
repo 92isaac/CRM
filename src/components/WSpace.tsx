@@ -11,9 +11,9 @@ export const WSpace: React.FC = () => {
       <div>
         <h2 className="font-bold mb-4">Overview</h2>
         <div className="flex flex-wrap justify-between gap-10">
-          <div className="shadow border-[#FCB900] border-t-4 w-[400px]">
+          <div className="shadow-md border-[#FCB900] border-t-4 w-[400px]">
             <div className="bg-[#f7eed6] px-4 py-2">
-              <h3 className="font-semibold">Today's Agenda</h3>
+              <h3 className="text-sm font-semibold">Today's Agenda</h3>
             </div>
             <div className="px-8 py-12">
               <p className="text-xs md:text-sm text-gray-400 font-semibold">
@@ -33,21 +33,21 @@ export const WSpace: React.FC = () => {
             <div className="md:mb-14">
               <h4 className="text-xs font-semibold text-gray-400">You added a new client</h4>
               <div className="ml-8">
-                <p className="font-semibold text-sm text-[#FCB900]">Odusote Mayorkun</p>
+                <p className="font-semibold text-xs md:text-sm text-[#FCB900]">Odusote Mayorkun</p>
                 <div className="border-l-2 inline-block px-2 border-[#FCB900] bg-[#f7eed6]">
-                  <p>Status Pending</p>
+                  <p className="text-xs md:text-sm">Status Pending</p>
                 </div>
               </div>
             </div>
           </WorkspaceCard>
           <WorkspaceCard title="Tasks that are due" text="Create Tasks">
             <div className="md:mx-0.5 md:mt-0.5 md:mb-16 bg-[#f7eed6] py-1 md:px-4 rounded-md">
-              <h4 className="font-semibold">Follow up with <span className=" text-[#FCB900]">Odusote</span></h4>
+              <h4 className="text-xs md:text-sm font-semibold">Follow up with <span className=" text-[#FCB900]">Odusote</span></h4>
               <div className="flex gap-8">
-                <p>
+                <p className="text-xs md:text-sm">
                   Due: <span>1/21/2021</span>
                 </p>
-                <p>
+                <p className="text-xs md:text-sm">
                   created: <span>1/15/2021</span>
                 </p>
               </div>
