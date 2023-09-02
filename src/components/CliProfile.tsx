@@ -12,7 +12,7 @@ export const CliProfile: React.FC = () => {
         <p className="text-gray-400">View client profile here</p>
       </div>
       <div className="bg-white p-2 md:p-8 rounded-md mt-6">
-      <div className="rounded-md shadow md:mt-4 px-4 md:px-8 py-4 bg-[#e5e5e5]">
+      <div className="rounded-md shadow md:mt-4 px-4 md:px-8 py-4 bg-[#fcfafa]">
         <h3>Client Profile</h3>
         <div className="md:flex gap-10 mt-6">
           <div className="w-24 h-24 rounded-full">
@@ -52,7 +52,7 @@ export const CliProfile: React.FC = () => {
             Applicant Fullname{" "}
             <span className="text-red-600">(as shown in passport)</span>
           </p>
-          <h3 className="font-bold text-sm">adegoketemitope1909@gmail.com</h3>
+          <h3 className="font-bold text-sm capitalize">Odusote Mayokun Kemi</h3>
         </div>
         <div className="my-3">
           <p className="text-gray-400 font-semibold text-xs md:text-sm pb-2 ">
