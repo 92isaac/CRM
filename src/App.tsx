@@ -2,11 +2,12 @@ import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import LandingPage from "./routes/LandingPage";
-import SharedDashboardLayout from "./layout/SharedLayout";
+// import SharedDashboardLayout from "./layout/SharedLayout";
 import PageNotFound from "./routes/PageNotFound";
 import { Loading } from "./helpers/Loading";
 import ScrollToTop from "./helpers/ScrollToTop";
 
+const SharedDashboardLayout =lazy(()=>import("./layout/SharedLayout"));
 const WorkSpace = lazy(() => import("./routes/WorkSpace"));
 const Client = lazy(() => import("./routes/Client"));
 const SheduleAppointment = lazy(() => import("./routes/SheduleAppointment"));
