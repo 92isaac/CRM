@@ -7,8 +7,11 @@ git clone https://github.com/92isaac/CRM.git
 
 Install Dependencies: 
 Navigate to the project directory and install the project dependencies using Yarn:
+
+
 cd crm
 yarn install
+
 
 Start the Development Server: Start the Vite development server:
 yarn dev
