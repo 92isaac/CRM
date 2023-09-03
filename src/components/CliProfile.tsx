@@ -21,7 +21,7 @@ export const CliProfile: React.FC<ClientsData> = ({name, email, phone, address})
       </div>
       <div className="bg-white p-2 md:p-8 rounded-md mt-6">
       <div className="rounded-md shadow md:mt-4 px-4 md:px-8 py-4 bg-[#fcfafa]">
-        <h3>Client Profile</h3>
+        <h3>Client's Profile</h3>
         <div className="md:flex gap-10 mt-6">
           <div className="w-24 h-24 rounded-full">
             <img

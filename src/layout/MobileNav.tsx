@@ -35,7 +35,7 @@ const MobileNav:React.FC = () => {
             <NavLink to='/workspace/task' className='pl-3 text-sm' onClick={handleChange}> <FaTasks  className="text-lg mr-4 inline-block" /> Task</NavLink>
         </li>
         <li className='text-lg mb-8'>
-            <NavLink to='/workspace/message' className='pl-3 text-sm' onClick={handleChange}> <AiOutlineMessage  className="text-lg mr-4 inline-block" /> Message</NavLink>
+            <NavLink to='/workspace/messages' className='pl-3 text-sm' onClick={handleChange}> <AiOutlineMessage  className="text-lg mr-4 inline-block" /> Message</NavLink>
         </li>
         <li className="text-lg mb-8">
             <div className="pl-3 text-sm">

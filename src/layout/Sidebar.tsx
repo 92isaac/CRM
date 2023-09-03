@@ -61,7 +61,7 @@ const Sidebar: React.FC = () => {
           </li>
           <li className="text-lg mb-8">
             <NavLink
-              to="/workspace/message"
+              to="/workspace/messages"
               className="pl-3 md:text-sm lg:text-lg"
             >
               {" "}
