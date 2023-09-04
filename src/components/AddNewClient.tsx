@@ -32,10 +32,10 @@ export const AddNewClient: React.FC = () => {
               />
             </div>
             <div className="w-[]">
-              <div className="text-center mb-5">
+              <div className="text-center mt-4 md:mt-0 mb-5">
                 <label
                   htmlFor="fileInput"
-                  className="bg-[#FCB900] text-[white] w-full rounded-md font-semibold py-3 px-12"
+                  className="bg-[#FCB900] text-[white] w-full rounded-md font-semibold py-3 px-6"
                 >
                   Upload Image
                 </label>
@@ -64,15 +64,179 @@ export const AddNewClient: React.FC = () => {
 
         <div className="mt-4">
           <h1 className="font-bold">Enter Client's Details</h1>
-          <div className="grid grid-cols-2">
+          <div className="grid md:grid-cols-2 gap-x-10 gap-y-3">
             <div>
-                <label htmlFor="fullname" className="block">Name</label>
-                <input type="text" title="fullname"/>
+              <label htmlFor="fullname" className="block font-bold mb-2">
+                Name
+              </label>
+              <input
+                type="text"
+                title="fullname"
+                className="focus:border-[#FCB900] border-2 border-[#8a8989]  focus:outline-none w-full py-3 px-3 rounded-md "
+              />
+            </div>
+            <div>
+              <label htmlFor="fullname" className="block font-bold mb-2">
+                Email
+              </label>
+              <input
+                type="email"
+                title="fullname"
+                className="border-2 border-[#8a8989] focus:border-[#FCB900] focus:outline-none w-full py-3 px-3 rounded-md "
+              />
+            </div>
+            <div>
+              <label htmlFor="fullname" className="block font-bold mb-2">
+                {" "}
+                Applicant Fullname{" "}
+                <span className="text-red-600">(as shown in passport)</span>
+              </label>
+              <input
+                type="text"
+                title="fullname"
+                className="focus:border-[#FCB900] border-2 border-[#8a8989]  focus:outline-none w-full py-3 px-3 rounded-md "
+              />
+            </div>
+            <div>
+              <label htmlFor="gender" className="block font-bold mb-2">
+                Gender
+              </label>
+              <select
+                id="gender"
+                name="gender"
+                className="border-2 border-[#8a8989] focus:border-[#FCB900] focus:outline-none w-full py-3 px-3 rounded-md"
+              >
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+            <div className="lg:flex justify-between items-center gap-x-4">
+            <div className="w-full">
+              <label htmlFor="fullname" className="block font-bold mb-2">
+                Place of Birth
+              </label>
+              <input
+                type="email"
+                title="fullname"
+                className="border-2 border-[#8a8989] focus:border-[#FCB900] focus:outline-none w-full py-3 px-3 rounded-md "
+              />
+            </div>
+            <div className="w-full">
+              <label htmlFor="fullname" className="block font-bold mb-2">
+                Date of Birth
+              </label>
+              <input
+                type="date"
+                title="fullname"
+                className="border-2 border-[#8a8989] focus:border-[#FCB900] focus:outline-none w-full py-3 px-3 rounded-md "
+              />
+            </div>
+            </div>
+            <div>
+              <label htmlFor="ctitzenship" className="block font-bold mb-2">
+                Country of Citizenship
+              </label>
+              <select
+                id="ctitzenship"
+                name="ctitzenship"
+                className="border-2 border-[#8a8989] focus:border-[#FCB900] focus:outline-none w-full py-3 px-3 rounded-md"
+              >
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+            <div>
+              <label htmlFor="maritalstatus" className="block font-bold mb-2">
+              Marital Status
+              </label>
+              <select
+                id="maritalstatus"
+                name="maritalstatus"
+                className="border-2 border-[#8a8989] focus:border-[#FCB900] focus:outline-none w-full py-3 px-3 rounded-md"
+              >
+                <option value="male">Married</option>
+                <option value="female">Single</option>
+              </select>
+            </div>
+            <div>
+              <label htmlFor="education" className="block font-bold mb-2">
+                Gender
+              </label>
+              <select
+                id="education"
+                name="education"
+                className="border-2 border-[#8a8989] focus:border-[#FCB900] focus:outline-none w-full py-3 px-3 rounded-md"
+              >
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+            <div>
+              <label htmlFor="fullname" className="block font-bold mb-2">
+                Current  Status
+              </label>
+              <input
+                type="email"
+                title="fullname"
+                className="border-2 border-[#8a8989] focus:border-[#FCB900] focus:outline-none w-full py-3 px-3 rounded-md "
+              />
+            </div>
+            <div>
+              <label htmlFor="phone" className="block font-bold mb-2">
+                Phone Number
+              </label>
+              <input
+                type="tel"
+                title="phone"
+                className="border-2 border-[#8a8989] focus:border-[#FCB900] focus:outline-none w-full py-3 px-3 rounded-md "
+              />
+            </div>
+            <div>
+              <label htmlFor="phone" className="block font-bold mb-2">
+               Residential Address
+              </label>
+              <textarea name="" id="" cols={10} rows={3} title="address"
+                className="border-2 border-[#8a8989] focus:border-[#FCB900] focus:outline-none w-full py-3 px-3 rounded-md "></textarea>
+            </div>
+            <div>
+              <label htmlFor="phone" className="block font-bold mb-2">
+               Mailing Address
+              </label>
+              <textarea name="" id="" cols={10} rows={3} title="address"
+                className="border-2 border-[#8a8989] focus:border-[#FCB900] focus:outline-none w-full py-3 px-3 rounded-md "></textarea>
+            </div>
+            <div>
+              <label htmlFor="intrest" className="block font-bold mb-2">
+                Country of intrest
+              </label>
+              <select
+                id="intrest"
+                name="education"
+                className="border-2 border-[#8a8989] focus:border-[#FCB900] focus:outline-none w-full py-3 px-3 rounded-md"
+              >
+                <option value="male">Nigeria</option>
+                <option value="female">Congo</option>
+              </select>
+            </div>
+            <div>
+              <label htmlFor="phone" className="block font-bold mb-2">
+                Purpose of Travelling
+              </label>
+              <input
+                type="text"
+                title="Purpose of Travelling"
+                className="border-2 border-[#8a8989] focus:border-[#FCB900] focus:outline-none w-full py-3 px-3 rounded-md "
+              />
             </div>
           </div>
         </div>
 
-        <div className="flex justify-end mt-6 mb-4 md:mb-8 md:mt-12">
+        <div className="flex justify-end gap-x-3 mt-6 mb-4 md:mb-8 md:mt-12">
+          <Button
+            title="Cancel"
+            className="text-red-700 border-2 font-bold border-red-700 rounded-md px-6 py-2"
+            OnClick={() => navigate(-1)}
+          />
           <Button
             title="Back"
             className="text-white bg-[#FCB900] rounded-md px-6 py-2"
