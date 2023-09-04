@@ -72,7 +72,7 @@ export const AddNewClient: React.FC = () => {
               <input
                 type="text"
                 title="fullname"
-                className="focus:border-[#FCB900] border-2 border-[#8a8989]  focus:outline-none w-full py-3 px-3 rounded-md "
+                className="focus:border-[#FCB900] border-2 border-[#8a8989]  focus:outline-none w-full py-2 px-3 rounded-md "
               />
             </div>
             <div>
@@ -82,7 +82,7 @@ export const AddNewClient: React.FC = () => {
               <input
                 type="email"
                 title="fullname"
-                className="border-2 border-[#8a8989] focus:border-[#FCB900] focus:outline-none w-full py-3 px-3 rounded-md "
+                className="border-2 border-[#8a8989] focus:border-[#FCB900] focus:outline-none w-full py-2 px-3 rounded-md "
               />
             </div>
             <div>
@@ -94,7 +94,7 @@ export const AddNewClient: React.FC = () => {
               <input
                 type="text"
                 title="fullname"
-                className="focus:border-[#FCB900] border-2 border-[#8a8989]  focus:outline-none w-full py-3 px-3 rounded-md "
+                className="focus:border-[#FCB900] border-2 border-[#8a8989]  focus:outline-none w-full py-2 px-3 rounded-md "
               />
             </div>
             <div>
@@ -104,7 +104,7 @@ export const AddNewClient: React.FC = () => {
               <select
                 id="gender"
                 name="gender"
-                className="border-2 border-[#8a8989] focus:border-[#FCB900] focus:outline-none w-full py-3 px-3 rounded-md"
+                className="border-2 border-[#8a8989] focus:border-[#FCB900] focus:outline-none w-full py-2 px-3 rounded-md"
               >
                 <option value="male">Male</option>
                 <option value="female">Female</option>
@@ -118,7 +118,7 @@ export const AddNewClient: React.FC = () => {
               <input
                 type="email"
                 title="fullname"
-                className="border-2 border-[#8a8989] focus:border-[#FCB900] focus:outline-none w-full py-3 px-3 rounded-md "
+                className="border-2 border-[#8a8989] focus:border-[#FCB900] focus:outline-none w-full py-2 px-3 rounded-md "
               />
             </div>
             <div className="w-full">
@@ -128,7 +128,7 @@ export const AddNewClient: React.FC = () => {
               <input
                 type="date"
                 title="fullname"
-                className="border-2 border-[#8a8989] focus:border-[#FCB900] focus:outline-none w-full py-3 px-3 rounded-md "
+                className="border-2 border-[#8a8989] focus:border-[#FCB900] focus:outline-none w-full py-2 px-3 rounded-md "
               />
             </div>
             </div>
@@ -139,7 +139,7 @@ export const AddNewClient: React.FC = () => {
               <select
                 id="ctitzenship"
                 name="ctitzenship"
-                className="border-2 border-[#8a8989] focus:border-[#FCB900] focus:outline-none w-full py-3 px-3 rounded-md"
+                className="border-2 border-[#8a8989] focus:border-[#FCB900] focus:outline-none w-full py-2 px-3 rounded-md"
               >
                 <option value="male">Male</option>
                 <option value="female">Female</option>
@@ -152,7 +152,7 @@ export const AddNewClient: React.FC = () => {
               <select
                 id="maritalstatus"
                 name="maritalstatus"
-                className="border-2 border-[#8a8989] focus:border-[#FCB900] focus:outline-none w-full py-3 px-3 rounded-md"
+                className="border-2 border-[#8a8989] focus:border-[#FCB900] focus:outline-none w-full py-2 px-3 rounded-md"
               >
                 <option value="male">Married</option>
                 <option value="female">Single</option>
@@ -165,7 +165,7 @@ export const AddNewClient: React.FC = () => {
               <select
                 id="education"
                 name="education"
-                className="border-2 border-[#8a8989] focus:border-[#FCB900] focus:outline-none w-full py-3 px-3 rounded-md"
+                className="border-2 border-[#8a8989] focus:border-[#FCB900] focus:outline-none w-full py-2 px-3 rounded-md"
               >
                 <option value="male">Male</option>
                 <option value="female">Female</option>
@@ -178,7 +178,7 @@ export const AddNewClient: React.FC = () => {
               <input
                 type="email"
                 title="fullname"
-                className="border-2 border-[#8a8989] focus:border-[#FCB900] focus:outline-none w-full py-3 px-3 rounded-md "
+                className="border-2 border-[#8a8989] focus:border-[#FCB900] focus:outline-none w-full py-2 px-3 rounded-md "
               />
             </div>
             <div>
@@ -188,7 +188,7 @@ export const AddNewClient: React.FC = () => {
               <input
                 type="tel"
                 title="phone"
-                className="border-2 border-[#8a8989] focus:border-[#FCB900] focus:outline-none w-full py-3 px-3 rounded-md "
+                className="border-2 border-[#8a8989] focus:border-[#FCB900] focus:outline-none w-full py-2 px-3 rounded-md "
               />
             </div>
             <div>
@@ -212,7 +212,7 @@ export const AddNewClient: React.FC = () => {
               <select
                 id="intrest"
                 name="education"
-                className="border-2 border-[#8a8989] focus:border-[#FCB900] focus:outline-none w-full py-3 px-3 rounded-md"
+                className="border-2 border-[#8a8989] focus:border-[#FCB900] focus:outline-none w-full py-2 px-3 rounded-md"
               >
                 <option value="male">Nigeria</option>
                 <option value="female">Congo</option>
@@ -225,7 +225,7 @@ export const AddNewClient: React.FC = () => {
               <input
                 type="text"
                 title="Purpose of Travelling"
-                className="border-2 border-[#8a8989] focus:border-[#FCB900] focus:outline-none w-full py-3 px-3 rounded-md "
+                className="border-2 border-[#8a8989] focus:border-[#FCB900] focus:outline-none w-full py-2 px-3 rounded-md "
               />
             </div>
           </div>
