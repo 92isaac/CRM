@@ -10,12 +10,9 @@ export const AddNewClient: React.FC = () => {
   const [startCamera, setStartCamera] = useState(false);
   // const [view, setView ] = useState(capturedImage)
 
-
   const handleStartCamera = () => {
     setStartCamera(true);
   };
-
-
 
   const navigate = useNavigate();
   return (
@@ -64,38 +61,37 @@ export const AddNewClient: React.FC = () => {
                 OnClick={handleStartCamera}
               />
             </div>
-            <div className="absolute md:right-10 w-full bg-white p-4 md:w-[400px]">
+            <div className="">
               {startCamera && (
-                <>
+                <div className="bg-[#f6edd3] absolute md:right-10 w-full rounded-md p-4 md:w-[400px]">
                   {" "}
                   <Webcam
                     audio={false}
                     ref={webcamRef}
                     screenshotFormat="image/jpeg"
-                    className="w-full  h-full"
+                    className="w-full rounded-md h-full"
                   />
-            <div className="md:flex">
-            <div className="w-full">
-                <Button
-                    title="Capture"
-                    className="text-green-700 font-semibold border-2 w-full border-green-400 rounded-md px-6 py-2"
-                    OnClick={()=>{
-                      captureImage();
-                    }}
-                  />
+                  <div className="md:flex justify-between gap-2 items-center mt-2">
+                    <div className="w-full">
+                      <Button
+                        title="Capture"
+                        className="text-green-700 font-semibold border-2 w-full border-green-400 rounded-md px-6 py-2"
+                        OnClick={() => {
+                          captureImage();
+                        }}
+                      />
+                    </div>
+                    <div className="w-full">
+                      <Button
+                        title="Close"
+                        className="text-red-700 font-semibold border-2 w-full border-red-700 rounded-md px-6 py-2"
+                        OnClick={() => {
+                          setStartCamera(false);
+                        }}
+                      />
+                    </div>
+                  </div>
                 </div>
-              <div className="w-full">
-              <Button
-                    title="Close"
-                    className="text-red-700 font-semibold border-2 w-full border-red-700 rounded-md px-6 py-2"
-                    OnClick={()=>{
-                      setStartCamera(false);
-                    
-                    }}
-                  /> 
-              </div>
-            </div>
-                </>
               )}
             </div>
           </div>
