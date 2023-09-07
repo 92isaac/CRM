@@ -1,18 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { userPlaceholder } from "../helpers/images";
 import { Button } from "../helpers/Button";
+import Webcam from "react-webcam";
 import { GlobalUseContext } from "../hook/Context";
 
 export const AddNewClient: React.FC = () => {
-  const {
-    videoRef,
-    isCapturing,
-    stopCapture,
-    captureImage,
-    startCapture,
-    canvasRef,
-  } = GlobalUseContext();
+  const { captureImage, capturedImage, webcamRef } = GlobalUseContext();
+  const [startCamera, setStartCamera] = useState(false);
+  // const [view, setView ] = useState(capturedImage)
+
+
+  const handleStartCamera = () => {
+    setStartCamera(true);
+  };
+
+
+
   const navigate = useNavigate();
   return (
     <div className="lg:px-16 lg:py-8 bg-[]">
@@ -23,13 +27,21 @@ export const AddNewClient: React.FC = () => {
       <div className="bg-white p-2 md:p-8 rounded-md mt-6">
         <div className="rounded-md shadow md:mt-4 px-4 md:px-8 py-4 bg-[#fcfafa]">
           <h3>Client's Profile</h3>
-          <div className="md:flex gap-10 mt-6">
+          <div className="relative md:flex gap-10 mt-6">
             <div className="w-24 h-24 rounded-full">
-              <img
-                src={userPlaceholder}
-                alt="placeholder"
-                className="object-cover rounded-full"
-              />
+              {capturedImage ? (
+                <img
+                  src={capturedImage}
+                  alt="placeholder"
+                  className="object-cover aspect-square rounded-full"
+                />
+              ) : (
+                <img
+                  src={userPlaceholder}
+                  alt="placeholder"
+                  className="object-cover aspect-square rounded-full"
+                />
+              )}
             </div>
             <div className="w-[]">
               <div className="text-center mt-4 md:mt-0 mb-5">
@@ -47,18 +59,45 @@ export const AddNewClient: React.FC = () => {
                 />
               </div>
               <Button
-                title="Use webcam"
+                title={"Use webcam"}
                 className="text-red-700 font-semibold border-2 w-full border-red-700 rounded-md px-6 py-2"
-                OnClick={isCapturing ? stopCapture : startCapture}
+                OnClick={handleStartCamera}
               />
             </div>
-            {isCapturing && (
-              <>
-                <video ref={videoRef} autoPlay />
-                <button onClick={captureImage}>Capture Image</button>
-              </>
-            )}
-            <canvas ref={canvasRef} style={{ display: "none" }} />
+            <div className="absolute md:right-10 w-full bg-white p-4 md:w-[400px]">
+              {startCamera && (
+                <>
+                  {" "}
+                  <Webcam
+                    audio={false}
+                    ref={webcamRef}
+                    screenshotFormat="image/jpeg"
+                    className="w-full  h-full"
+                  />
+            <div className="md:flex">
+            <div className="w-full">
+                <Button
+                    title="Capture"
+                    className="text-green-700 font-semibold border-2 w-full border-green-400 rounded-md px-6 py-2"
+                    OnClick={()=>{
+                      captureImage();
+                    }}
+                  />
+                </div>
+              <div className="w-full">
+              <Button
+                    title="Close"
+                    className="text-red-700 font-semibold border-2 w-full border-red-700 rounded-md px-6 py-2"
+                    OnClick={()=>{
+                      setStartCamera(false);
+                    
+                    }}
+                  /> 
+              </div>
+            </div>
+                </>
+              )}
+            </div>
           </div>
         </div>
 
@@ -111,26 +150,26 @@ export const AddNewClient: React.FC = () => {
               </select>
             </div>
             <div className="lg:flex justify-between items-center gap-x-4">
-            <div className="w-full">
-              <label htmlFor="fullname" className="block font-bold mb-2">
-                Place of Birth
-              </label>
-              <input
-                type="email"
-                title="fullname"
-                className="border-2 border-[#8a8989] focus:border-[#FCB900] focus:outline-none w-full py-2 px-3 rounded-md "
-              />
-            </div>
-            <div className="w-full">
-              <label htmlFor="fullname" className="block font-bold mb-2">
-                Date of Birth
-              </label>
-              <input
-                type="date"
-                title="fullname"
-                className="border-2 border-[#8a8989] focus:border-[#FCB900] focus:outline-none w-full py-2 px-3 rounded-md "
-              />
-            </div>
+              <div className="w-full">
+                <label htmlFor="fullname" className="block font-bold mb-2">
+                  Place of Birth
+                </label>
+                <input
+                  type="email"
+                  title="fullname"
+                  className="border-2 border-[#8a8989] focus:border-[#FCB900] focus:outline-none w-full py-2 px-3 rounded-md "
+                />
+              </div>
+              <div className="w-full">
+                <label htmlFor="fullname" className="block font-bold mb-2">
+                  Date of Birth
+                </label>
+                <input
+                  type="date"
+                  title="fullname"
+                  className="border-2 border-[#8a8989] focus:border-[#FCB900] focus:outline-none w-full py-2 px-3 rounded-md "
+                />
+              </div>
             </div>
             <div>
               <label htmlFor="ctitzenship" className="block font-bold mb-2">
@@ -147,7 +186,7 @@ export const AddNewClient: React.FC = () => {
             </div>
             <div>
               <label htmlFor="maritalstatus" className="block font-bold mb-2">
-              Marital Status
+                Marital Status
               </label>
               <select
                 id="maritalstatus"
@@ -173,7 +212,7 @@ export const AddNewClient: React.FC = () => {
             </div>
             <div>
               <label htmlFor="fullname" className="block font-bold mb-2">
-                Current  Status
+                Current Status
               </label>
               <input
                 type="email"
@@ -193,17 +232,29 @@ export const AddNewClient: React.FC = () => {
             </div>
             <div>
               <label htmlFor="phone" className="block font-bold mb-2">
-               Residential Address
+                Residential Address
               </label>
-              <textarea name="" id="" cols={10} rows={3} title="address"
-                className="border-2 border-[#8a8989] focus:border-[#FCB900] focus:outline-none w-full py-3 px-3 rounded-md "></textarea>
+              <textarea
+                name=""
+                id=""
+                cols={10}
+                rows={3}
+                title="address"
+                className="border-2 border-[#8a8989] focus:border-[#FCB900] focus:outline-none w-full py-3 px-3 rounded-md "
+              ></textarea>
             </div>
             <div>
               <label htmlFor="phone" className="block font-bold mb-2">
-               Mailing Address
+                Mailing Address
               </label>
-              <textarea name="" id="" cols={10} rows={3} title="address"
-                className="border-2 border-[#8a8989] focus:border-[#FCB900] focus:outline-none w-full py-3 px-3 rounded-md "></textarea>
+              <textarea
+                name=""
+                id=""
+                cols={10}
+                rows={3}
+                title="address"
+                className="border-2 border-[#8a8989] focus:border-[#FCB900] focus:outline-none w-full py-3 px-3 rounded-md "
+              ></textarea>
             </div>
             <div>
               <label htmlFor="intrest" className="block font-bold mb-2">

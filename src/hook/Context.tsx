@@ -1,20 +1,22 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useRef, useState, createContext, useContext, ReactNode } from "react";
+import { useRef, useState, createContext, useContext, ReactNode, useCallback } from "react";
+import Webcam from 'react-webcam';
+import { MutableRefObject } from 'react';
+
+
+interface WebcamRef extends MutableRefObject<Webcam | null> {}
 
 interface GlobalData {
   toggle: boolean;
   dropdown: boolean;
-  isCapturing: boolean;
   divRef: any;
-  videoRef: any;
   canvasRef:any;
-  // onCapture: (base64Image: string) => void;
+  capturedImage: string | null;
   handleChange: (nextChecked: boolean) => void;
   handleDropDown: (nextChecked: boolean) => void;
   handleClick:()=> void;
-  startCapture:()=> void;
-  stopCapture:()=> void;
-  captureImage:any
+  captureImage:any;
+  webcamRef: WebcamRef
 
 }
 
@@ -23,15 +25,17 @@ export const AppContext = createContext<GlobalData | null | any >(null);
 
 interface AppProviderProps {
   children: ReactNode;
+ 
+
 }
 
 export const AppProvider = ({ children }: AppProviderProps) => {
   const [toggle, setToggle] = useState(false);
   const [dropdown, setDropdown] = useState(false);
   const divRef = useRef<HTMLDivElement | null>(null);
-  const videoRef = useRef<HTMLVideoElement | null>(null);
-  const [isCapturing, setIsCapturing] = useState(false);
   const canvasRef = useRef(null);
+  const webcamRef = useRef<Webcam | null>(null);
+  const [capturedImage, setCapturedImage] = useState<string | null>(null);
 
 
   const handleClick = () => {
@@ -48,60 +52,33 @@ export const AppProvider = ({ children }: AppProviderProps) => {
     setDropdown(!dropdown)
   }
 
-
-
-  const startCapture = async () => {
-    try {
-      const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-      (videoRef.current as HTMLVideoElement).srcObject = stream;
-      setIsCapturing(true);
-    } catch (error) {
-      console.error('Error accessing the camera:', error);
-    }
-  };
-  
-
-  const stopCapture = () => {
-    if (videoRef.current && videoRef.current.srcObject) {
-      const tracks = (videoRef.current.srcObject as MediaStream).getTracks();
-      tracks.forEach(track => track.stop());
-      videoRef.current.srcObject = null;
-      setIsCapturing(false);
-    }
-  };
-  
-  
-
-  const captureImage = ({ onCapture }: { onCapture: (base64Image: string) => void }) => {
-    const video = videoRef.current;
-    const canvas = canvasRef.current as unknown as HTMLCanvasElement;
-
-    if (video && canvas) {
-      canvas.width = video.videoWidth;
-      canvas.height = video.videoHeight;
-      const context = canvas.getContext('2d');
-      if (context) {
-        context.drawImage(video, 0, 0, canvas.width, canvas.height);
-        const imageSrc = canvas.toDataURL('image/jpeg');
-        onCapture(imageSrc); // Call the onCapture prop with the captured image
+  const captureImage = useCallback(()=>{
+    if (webcamRef.current) {
+      const imageSrc = webcamRef.current.getScreenshot();
+      if (imageSrc !== null) {
+        setCapturedImage(imageSrc);
+      } else {
+        console.error('Error capturing image.');
       }
     }
-  };
+  }, [webcamRef]);
 
+
+
+  
+  
 
 
   const globalData: GlobalData = {
     toggle,
     divRef,
     dropdown,
-    isCapturing,
-    videoRef,
     canvasRef,
+    capturedImage,
+    webcamRef,
     handleChange,
     handleClick,
     handleDropDown,
-    startCapture,
-    stopCapture,
     captureImage,
   };
 
