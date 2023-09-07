@@ -6,7 +6,7 @@ import MobileNav from "./MobileNav";
 import { GlobalUseContext } from "../hook/Context";
 
 export const DashboardNavbar: React.FC = () => {
-  const { toggle,  handleChange } = GlobalUseContext()
+  const { toggle,  handleChange, capturedImage } = GlobalUseContext()
 
 
 
@@ -22,7 +22,7 @@ export const DashboardNavbar: React.FC = () => {
          </div>
           <strong className="">Kelvin</strong>
           <div className="w-full rounded-full p-1">
-          <img src={test} alt="profile display picture" className="w-12 h-12 rounded-full object-cover " />
+          <img src={capturedImage ? capturedImage : test} alt="profile display picture" className="w-12 h-12 rounded-full object-cover " />
           </div>
         </div>
       </div>
